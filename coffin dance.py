@@ -2,8 +2,9 @@ import discord
 from discord.ext import commands
 from discord.ext import tasks
 import logging
+import os
 
-token="NzgxNzEyOTUwNzc5MDUyMDQy.X8Bo6g.ZMbZ0FXtzoHvZ0B19NWXnqo8u6g"
+
 bot = commands.Bot(command_prefix='/')
 bot.remove_command('help')
 
@@ -29,5 +30,5 @@ async def kick(ctx, user_name: discord.Member, reason=None):
 async def on_message(message):
     await bot.process_commands(message)
 
-
-bot.run(token)
+access_token = os.environ["BOT_TOKEN"]
+bot.run(access_token)
