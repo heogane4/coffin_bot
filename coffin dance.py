@@ -30,5 +30,5 @@ async def kick(ctx, user_name: discord.Member, reason=None):
 async def on_message(message):
     await bot.process_commands(message)
 
-access_token = os.environ["BOT_TOKEN"]
+access_token = os.environ['BOT_TOKEN']
 bot.run(access_token)
